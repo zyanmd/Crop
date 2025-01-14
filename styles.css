@@ -206,3 +206,23 @@ button:hover {
     transform: translateY(0);
   }
 }
+.footer {
+  background: #f1f1f1; /* Warna latar belakang yang lembut */
+  color: #333; /* Warna teks */
+  text-align: center; /* Pusatkan teks */
+  padding: 10px 0; /* Jarak atas dan bawah */
+  font-size: 12px; /* Ukuran font kecil */
+  font-family: 'Arial', sans-serif; /* Font sederhana */
+  border-top: 1px solid #ccc; /* Garis atas untuk pemisah */
+  position: relative; /* Tidak mengganggu posisi elemen lainnya */
+  width: 100%; /* Lebar penuh */
+  margin-top: 20px; /* Jarak dari elemen sebelumnya */
+}
+
+.footer strong {
+  color: #ff5252; /* Warna teks nama lebih menonjol */
+}
+
+.footer p {
+  margin: 0; /* Hilangkan margin tambahan */
+}
