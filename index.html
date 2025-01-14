@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Foto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="note">
+  <p><strong>Catatan:</strong> Pastikan untuk memeriksa gambar sebelum menyimpannya!</p>
+</div>
+
+  <h1>Sesuaikan Pasfoto Anda</h1>
+  <input type="file" id="file-input" accept="image/*">
+  
+  <div id="image-container">
+    <div id="crop-area">
+      <img id="image" src="" alt="Pilih gambar">
+<div id="face-overlay">
+  <svg id="face-mask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 500">
+    <!-- Bentuk kepala -->
+    <ellipse cx="150" cy="130" rx="80" ry="100" stroke="red" fill="none" stroke-width="2" />
+    <!-- Posisi wajah -->
+    <circle cx="150" cy="100" r="10" fill="red" />
+    <!-- Leher -->
+    <line x1="120" y1="210" x2="120" y2="260" stroke="red" stroke-width="2" />
+    <line x1="180" y1="210" x2="180" y2="260" stroke="red" stroke-width="2" />
+    <!-- Bahu dan dada -->
+    <path d="M70 260 C100 300, 200 300, 230 260" stroke="red" fill="none" stroke-width="2" />
+    <!-- Garis horizontal leher -->
+    <line x1="120" y1="260" x2="180" y2="260" stroke="red" stroke-width="2" />
+    <!-- Tubuh bagian tengah -->
+    <line x1="150" y1="260" x2="150" y2="340" stroke="red" stroke-width="2" />
+    <!-- Kurva sisi tubuh -->
+    <path d="M70 260 C60 320, 90 340, 150 340" stroke="red" fill="none" stroke-width="2" />
+    <path d="M230 260 C240 320, 210 340, 150 340" stroke="red" fill="none" stroke-width="2" />
+  </svg>
+</div>
+    </div>
+    <div id="controls">
+      <button id="zoom-in"><i class="fas fa-search-plus"></i></button>
+      <button id="zoom-out"><i class="fas fa-search-minus"></i></button>
+      <button id="rotate-left"><i class="fas fa-undo"></i></button>
+      <button id="rotate-right"><i class="fas fa-redo"></i></button>
+    </div>
+    <div id="move-controls">
+      <button id="move-up"><i class="fas fa-arrow-up"></i></button>
+      <div>
+        <button id="move-left"><i class="fas fa-arrow-left"></i></button>
+        <button id="move-right"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <button id="move-down"><i class="fas fa-arrow-down"></i></button>
+    </div>
+    <button id="reset">Reset</button>
+    <button id="crop">Crop</button>
+  </div>
+  
+  <div id="result-container">
+    <h3>Hasil Akhir</h3>
+    <canvas id="result"></canvas>
+    <a id="download" download="pasfoto.png">Simpan</a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

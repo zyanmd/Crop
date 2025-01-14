@@ -1,0 +1,208 @@
+/* General Style */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #4CAF50;
+}
+
+input[type="file"] {
+  margin: 20px auto;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Image Container */
+#image-container {
+  max-width: 90%;
+  margin: 20px auto;
+  position: relative;
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#crop-area {
+  position: relative;
+  overflow: hidden;
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Face Overlay */
+#face-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#face-mask ellipse,
+#face-mask circle,
+#face-mask line {
+  stroke: #FF5722;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Controls */
+#controls, #move-controls {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button i {
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#move-controls div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Reset & Crop Buttons */
+#reset, #crop {
+  margin: 10px 5px;
+  background-color: #2196F3;
+}
+
+#reset:hover {
+  background-color: #1E88E5;
+}
+
+#crop:hover {
+  background-color: #1976D2;
+}
+
+/* Result Container */
+#result-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#result-container h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#result {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#download {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#download:hover {
+  background-color: #45a049;
+}
+.note {
+  background: linear-gradient(135deg, #ff4b5c, #ff7c7c); /* Warna latar belakang gradien */
+  color: white; /* Warna teks putih */
+  padding: 20px;
+  border-radius: 10px; /* Sudut membulat */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Bayangan lembut */
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  animation: popUp 0.5s ease-in-out; /* Animasi muncul */
+}
+
+.note p {
+  margin: 0;
+}
+
+.note::before {
+  content: ""; 
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: #ff4b5c; /* Warna pin */
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+  z-index: 1;
+}
+
+.note::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 30px;
+  background: #ff4b5c; /* Warna pin */
+  border-radius: 5px 5px 0 0; /* Sudut atas melengkung */
+  z-index: 0;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
